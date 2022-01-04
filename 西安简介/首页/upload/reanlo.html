@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册|登录页面</title>
+    <link rel="shortcut icon" href="favicon .ico">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/reanlo.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册|登录页面</title>
+    <link rel="shortcut icon" href="favicon .ico">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script type="text/javascript">
+        // 获取模型
+        var modal = document.getElementById('id01');
+
+        // 鼠标点击模型外区域关闭登录框
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        // 获取模型
+        var modal = document.getElementById('id02');
+        // 鼠标点击模型外区域关闭登录框
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                // 此元素不会被显示
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="w">
+        <header>
+            <div class="logo">
+                <a href="indes.html"><img src="./favicon .ico" alt=""></a>
+            </div>
+        </header>
+        <div class="registerarea">
+            <h3><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">注册</a>新用户
+                <div class="login">已有账号，去<a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">登录</a> </div>
+            </h3>
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <form class="modal-content animate" action="" method="post">
+                    <div class="container">
+                        <label><b>用户名</b></label>
+                        <input type="text" placeholder="输入用户名" name="username" required id="number1">
+
+                        <label><b>密码</b></label>
+                        <input type="password" placeholder="请输入密码" name="psw" required id="password1">
+                        <label><b>密码</b></label>
+                        <input type="password" placeholder="请再次输入密码" name="psw-repeat" required id="repassword">
+                        <input type="checkbox" checked="checked"> 记住我
+                        <p>我已<a href="#">用户需知</a></p>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">取消</button>
+                            <button type="submit" class="signupbtn1" onclick="check()">注册</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="id02" class="modal">
+                <form class="modal-content animate" action="" method="post" onsubmit="return false;">
+                    <div class="imgcontainer">
+                        <!--此元素不会被显示-->
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="" alt="welcome to xian" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label><b>用户名</b></label>
+                        <input type="text" placeholder="请输入用户名" name="uname" required id="number">
+
+                        <label><b>密码</b></label>
+                        <input type="password" placeholder="请输入密码" name="psw" required id="password">
+
+                        <button type="submit" id="enter" onclick="login()">登陆</button>
+                        <input type="checkbox" checked="checked"> 记住我
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onClick="document.getElementById('id02').style.display='none'" class="cancelbtn">取消</button>
+                        <span class="psw">忘记<a href="#">密码?</a></span>
+                    </div>
+                </form>
+            </div>
+            <script src="../js/cookieUtils.js"></script>
+            <script type="text/javascript">
+                function check() {
+                    let number1 = document.getElementById("number1").value;
+                    let password1 = document.getElementById('password1').value;
+                    let repassword = document.getElementById('repassword').value;
+                    let cookieValue = getCookie(number1);
+
+                    if (cookieValue != null) {
+                        alert(number1 + "  用户名已存在");
+                    } else {
+                        if (password1 != repassword) {
+                            alert("两次密码不一致：" + password1 + " - " + repassword)
+                        } else {
+                            let result = setCookie(number1, password1);
+                            if (result) {
+                                alert(number1 + " 注册成功");
+                            }
+                        }
+                    }
+                }
+
+                function login() {
+                    let number = document.getElementById("number").value;
+                    let password = document.getElementById('password').value;
+                    let cookieValue = getCookie(number);
+
+                    if (cookieValue == null) {
+                        alert(number + "  用户不存在，请注册");
+                    } else {
+                        if (password != cookieValue) {
+                            alert(number + "  密码错误");
+                        } else {
+                            alert(number + " 登录成功");
+                        }
+                    }
+                }
+            </script>
+            <footer style="background: #f1f1f1 url('../welcomexian.png') no-repeat center;">
+                <div class="help">
+                    <dl>
+                        <dd><a href="#">自由行</a></dd>
+                        <dd><a href="#">自驾游</a></dd>
+                        <dd><a href="#">门票</a></dd>
+                        <dd><a href="#">公司旅游</a></dd>
+                        <dd><a href="#">当地活动</a></dd>
+                        <dd><a href="#">旅拍</a></dd>
+                    </dl>
+                    <dl>
+                        <dd><a href="#">攻略</a></dd>
+                        <dd><a href="#">游记</a></dd>
+                        <dd><a href="#">达人玩法</a></dd>
+                    </dl>
+                    <dl>
+                        <dd><a href="#">帮助中心</a></dd>
+                        <dd><a href="#">火车时刻表</a></dd>
+                        <dd><a href="#">地铁路线图</a></dd>
+                        <dd><a href="#">航班查询</a></dd>
+                    </dl>
+                </div>
+                <div class="coperight">
+                    <div class="links">
+                        <a href="#"> 关于我们</a> | <a href="#">联系我们</a> | <a href="#">联系客服</a> | <a href="#">友情链接 </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+</html>

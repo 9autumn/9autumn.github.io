@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安印象</title>
+    <link rel="shortcut icon" href="favicon .ico">
+    <!-- 引入我们初始化样式文件 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/indes.css">
+    <!-- 引入首页的js文件     -->
+    <scrip src="../js/indes.js">
+        </script>
+        <script type="text/javascript">
+            function file() {
+
+                var fso;
+                try {
+                    fso = new ActiveXObject("Scripting.FileSystemObject");
+
+                } catch (e) {
+                    alert("当前浏览器不支持");
+                    return;
+                }
+
+                alert("方法已执行2");
+                var f1 = fso.createtextfile("D:\1.txt", true);
+                f1.write("这是一个文本文档");
+                var openf1 = fso.OpenTextFile("1.txt");
+
+                str = openf1.ReadLine();
+                alert("里面的内容为'" + str + "'");
+
+
+            }
+
+            function popWin() {
+                document.getElementById('light').style.display = 'block';
+                document.getElementById('gudingk').style.display = 'none';
+            }
+
+            function closeWin() {
+                document.getElementById('light').style.display = 'none';
+                document.getElementById('gudingk').style.display = 'block';
+            }
+        </script>
+        <!-- 轮播图 -->
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                text-decoration: none;
+            }
+
+            #banner {
+                width: 900px;
+                height: 455px;
+                overflow: hidden;
+                border: 3px solid #999;
+                position: relative;
+                left: 370px;
+            }
+
+            #imglist {
+                width: 6300px;
+                height: 455px;
+            }
+
+            #imglist li {
+                float: left;
+            }
+
+            #iconlist {
+                position: absolute;
+                right: 20px;
+                bottom: 10px;
+            }
+
+            #iconlist li {
+                float: left;
+                width: 25px;
+                height: 25px;
+                border: 1px solid black;
+                border-radius: 13px;
+                text-align: center;
+                line-height: 25px;
+                margin-left: 5px;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .pop_win {
+                display: none;
+                position: absolute;
+                top: 5%;
+                /* top: 20%; */
+                left: 23%;
+                /* left: 30%; */
+                width: 55%;
+                /* width: 30%; */
+                height: 87%;
+                /* height: 45%; */
+                padding: 10px;
+                border: 2px solid rebeccapurple;
+                background-color: white;
+                z-index: 9999;
+                overflow: auto;
+                border-radius: 15px;
+                background: url(../../景点列/防控疫情图.jpg);
+                background-size: cover;
+            }
+
+            .a1 {
+                text-decoration: none;
+                color: red;
+            }
+
+            .a2 {
+                text-decoration: none;
+                color: red;
+            }
+
+            .tanchuang {
+                font-weight: 1000;
+                font-size: large;
+                color: rgb(10, 169, 197);
+            }
+
+            h4 {
+                color: royalblue;
+            }
+
+        </style>
+</head>
+
+<body>
+    <div id="gudingk" class="gudingkuang" style="display: block; position: fixed; left: 83.6%; top: 21%;border-style: solid; border-color: red; width: 245px;">
+        <h1 style="color: red;">西安游玩提醒:</h1>
+        <br>
+        <p>根据西安疫情防疫通知：有些游玩点需要48h内核酸检测阴性证明，请时刻关注当地要求，避免导致出游不便。</p>
+        <br>
+        <p>另：请科学佩戴口罩、勤洗手、常通风，保持安全社交距离，养成良好习惯。</p>
+    </div>
+
+    <!-- 快捷导航模块  start-->
+    <section class="shortcut">
+        <div class="w">
+            <div class="fl">
+                <ul>
+                    <li><a id="dingbu">西安印象欢迎您！</a>&nbsp;</li>
+                    <li>
+                        请<a href="./reanlo.html" class="style-red1" target="_blank" href="javascript:void(0)" onclick="popWin();">登录</a>&nbsp; 免费<a
+                            href="./reanlo.html" class="style-red" target="_blank" href="javascript:void(0)" onclick="popWin();">注册</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fr">
+                <ul>
+                    <li>关注西安印象</li>
+                    <li></li>
+                    <li>客服服务</li>
+                    
+                    <li></li>
+                    <a href="../../景点列/景点列表.html" target="_blank" style="color: saddlebrown;">景点列表</a>
+                </ul>
+            </div>
+
+            <div id="light" class="pop_win">
+                <a class="a2" href="javascript:void(0)" onclick="closeWin();" style="float: right;">[x]</a>
+                <h2>西安市疫情防控要求:</h2>
+                <div>
+                    <h3>一、</h3>
+                    <p class="tanchuang">请市民密切关注疫情发展动态，非必要不离市。</p>
+                    <h3>二、</h3>
+                    <p class="tanchuang">
+                        近14天内，与国内本土病例行程轨迹有交集的人员、从以下这些疫情相关地区来（返）西安的人员（含旅游、开会等人员）、与国内本土病例乘坐过相同航班、高铁、火车的人员，请主动向社区、单位、酒店报备，配合做好核酸检测、医学观察、健康监测等疫情防控措施。
+                    </p>
+                    <h3>三、</h3>
+                    <p class="tanchuang">相关社区、单位、酒店要履行疫情防控主体责任，及时做好人员排查、登记、报告，及时进行疫情提醒，积极提供服务。</p>
+                    <h3>四、</h3>
+                    <p class="tanchuang">
+                        继续保持规范佩戴口罩、勤洗手、常通风、保持1米线等良好卫生习惯，主动做好测温、扫码等常态化措施，出现相关症状及时就诊。符合条件但仍未接种的市民尽快完成接种，保护自己，保护家人。</p>
+                    <h3>五、</h3>
+                    <p class="tanchuang">如有疑问可拨打西安市各区（县）、开发区疫情防控指挥部群众咨询热线。</p>
+                    <h4>咨询热线请关注微信公众号：西安疫情咨询热线。</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- 快捷导航模块  end-->
+    <!-- header头部模块制作 start-->
+    <header class="header w" id="head">
+        <!-- logo模块 -->
+        <div class="logo">
+            <h1>
+                <a href="indes.html" title="西安印象">西安印象</a>
+            </h1>
+        </div>
+        <!-- 导航栏制作 start -->
+
+        <div class="mar">
+            春风得意马蹄急，一日看遍长安花.
+        </div>
+        <!-- 导航栏制作 end -->
+        <!-- 搜索栏制作 start-->
+        <div class="search">
+            <input type="search" name="" id="" placeholder="搜索美食/文化/住宿">
+            <button>搜索</button>
+        </div>
+        <h4></h4>
+        <!-- 搜索栏制作 end-->
+    </header>
+    <!-- header头部模块制作 end-->
+    <!-- nav模块制作 start -->
+    <nav class="nav">
+        <div class="w">
+            <div class="dropdown">
+                <div class="dt">西安优美景点</div>
+                <div class="dd">
+                    <ul>
+                        <li><a href="../线路3/西安植物园/西安植物园.html" target="_blank">西安植物园</a></li>
+                        <li><a href="../线路3/西安世博园/西安世博园.html" target="_blank">西安世博园</a></li>
+                        <li><a href="../线路1/西安碑林博物馆/西安碑林博物馆相关页面.html" target="_blank">西安碑林博物馆</a></li>
+                        <li><a href="../线路3/西安秦岭野生动物园/西安秦岭野生动物园.html" target="_blank">西安秦岭野生动物园</a></li>
+                        <li><a href="../线路2/小雁塔/小雁塔相关介绍.html" target="_blank">小雁塔</a></li>
+                        <li><a href="../线路2/秦始皇兵马俑博物馆/兵马俑博物馆介绍页面.html" target="_blank">秦始皇兵马俑博物馆</a></li>
+                        <li><a href="../线路3/大唐芙蓉园/大唐芙蓉园介绍页面.html" target="_blank">大唐芙蓉园</a></li>
+                        <li><a href="../线路1/陕西历史博物馆/陕西历史博物馆页面.html" target="_blank">陕西历史博物馆</a></li>
+                        <li><a href="../线路2/大雁塔/大雁塔介绍页面.html" target="_blank">大雁塔</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navitems">
+                <ul>
+                    <li><a href="#西安历史底蕴">西安历史底蕴</a></li>
+                    <li><a href="#西安名小吃">西安名小吃</a></li>
+                    <li><a href="#旅游线路推荐">旅游线路推荐</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav模块制作 end -->
+    <!-- 首页轮播图 start -->
+    <div id="banner">
+        <ul id="imglist">
+            <li>
+                <a href="../线路3/大唐芙蓉园/大唐芙蓉园介绍页面.html" target="_blank"><img src="images/大唐芙蓉园.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="../线路1/西安碑林博物馆/西安碑林博物馆相关页面.html" target="_blank"><img src="images/碑林.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="../线路1/西安关中民俗艺术博物馆/西安关中民俗艺术博物馆相关页面.html" target="_blank"><img src="images/西安关中民俗艺术博物馆.jpg"
+                        alt=""></a>
+            </li>
+            <li>
+                <a href="../线路3/西安秦岭野生动物园/西安秦岭野生动物园.html" target="_blank"><img src="images/西安秦岭野生动物园.jpeg" alt=""></a>
+            </li>
+            <li>
+                <a href="../线路2/西安钟鼓楼/西安钟鼓楼介绍页面.html" target="_blank"><img src="images/西安钟楼.png" alt=""></a>
+            </li>
+            <li>
+                <a href="../线路3/大唐芙蓉园/大唐芙蓉园介绍页面.html" target="_blank"><img src="images/大唐芙蓉园.jpg" alt=""></a>
+            </li>
+        </ul>
+        <ul id="iconlist">
+            <li><a href="../线路3/大唐芙蓉园/大唐芙蓉园介绍页面.html" target="_blank">1</a></li>
+            <li><a href="../线路1/西安碑林博物馆/西安碑林博物馆相关页面.html" target="_blank">2</a></li>
+            <li><a href="../线路1/西安关中民俗艺术博物馆/西安关中民俗艺术博物馆相关页面.html" target="_blank">3</a></li>
+            <li><a href="../线路3/西安秦岭野生动物园/西安秦岭野生动物园.html" target="_blank">4</a></li>
+            <li><a href="../线路2/西安钟鼓楼/西安钟鼓楼介绍页面.html" target="_blank">5</a></li>
+        </ul>
+    </div>
+    <script>
+        //获取图片标签
+        var imgs = document.getElementById("imglist").getElementsByTagName("li");
+        //获取列表
+        var icons = document.getElementById("iconlist").getElementsByTagName("li");
+
+        //初始化图片的位置
+        var left = 0;
+        imglist.style.marginLeft = left + "px";
+        //设置一个计时器
+        var timer;
+        //自调用
+        run();
+
+        function run() {
+            if (left <= -4500) {
+                imglist.style.marginLeft = "0px";
+                left = 0;
+            }
+            //如果位置为整张图片，暂停1s
+            var n = (left % 900 == 0) ? 1500 : 20;
+            changeimg();
+
+            //计算图片下标
+            var m = Math.floor(-left / 900);
+            changeicon(m);
+
+            left -= 10;
+            //使用setTimeout()
+            timer = setTimeout(run, n);
+        }
+        //setInterval(run,10);
+
+        function changeimg() {
+            imglist.style.marginLeft = left + "px";
+        }
+
+        function changeicon(m) {
+            for (var i = 0; i < icons.length; i++) {
+                icons[i].style.backgroundColor = "";
+            }
+            icons[m].style.backgroundColor = "brown";
+        }
+
+        //绑定图片事件
+        for (var i = 0; i < imgs.length; i++) {
+            //闭包解决()(i)
+            (function (i) {
+                imgs[i].onmousemove = function () {
+                    clearTimeout(timer);
+                    left = -i * 900;
+                    changeimg();
+                    changeicon(i);
+                }
+                imgs[i].onmouseout = function () {
+                    run();
+                }
+            })(i)
+
+        }
+
+
+        for (var i = 0; i < icons.length; i++) {
+            //闭包解决()(i)
+            (function (i) {
+                icons[i].onmousemove = function () {
+                    clearTimeout(timer);
+                    left = -i * 900;
+                    changeimg();
+                    changeicon(i);
+                }
+                icons[i].onmouseout = function () {
+                    run();
+                }
+            })(i)
+
+        }
+    </script>
+    <!-- 首页轮播图 end -->
+    <!-- 西安历史底蕴 start-->
+    <div class="ge" id="西安历史底蕴"></div>
+    <div class="w">
+        <div class="logo2">
+            <h1>
+                <a href="indes.html" title="西安印象">西安历史底蕴</a>
+            </h1>
+        </div>
+        <div class="mar2">
+            <a>西安历史底蕴</a>
+        </div><br><br><br><br><br>
+        <div class="lishi">
+            <p>西安，古称长安、镐京，陕西省会、副省级市，是世界历史名城、中国四大古都之一、中华文明和中华民族重要发祥地，是国家重要的科研、教育、工业基地，亦是丝绸之路起点城市、“一带一路”核区。</p>
+            <p>北临渭河、黄土高原，南邻秦岭，东与华县、渭南市、商州区、洛南县相接，西与眉县、太白县接壤；总面积10752平方公里，景点有兵马俑、钟鼓楼等。1927年11月25日，设立西安市；1954年6月19日，为省辖市。
+                1992年7月国务院批准为内陆开放城市，是新亚欧大陆桥中国段陇海兰新线上最大的中心城市。现辖9区4县，总面积9983平方公里，人口725万人。2004年全市生产总值实现1095.87亿元；全年财政总收入164.5亿元，其中地方财政收入86.06亿元。
+            </p>
+            <img src="../图片2.png" width="900">
+            <p>在全国区域经济布局上，西安具有承东启西、东联西进的区位优势，在西部大开发战略中具有重要的战略地位。西安的比较优势突出地表现在三个层次上：世界级的旅游观光资源优势；国家级的科研教育和高新技术产业基地优势；区域级的金融、商贸中心和交通、信息枢纽优势。通过深化改革和扩大开放，西安正在成为我国重要的内陆开放城市。
+            </p>
+            <p>旅游资源得天独厚，是海内外著名的世界历史文化名城之一。西安，是人类文明和中华民族优秀传统文化的发祥地之一，有着3100多年的建城史，先后有周、秦、汉、唐等13个王朝在这里建都，曾经是中国政治、经济文化中心和最早对外开放的城市，闻名遐尔的“丝绸之路”就是以西安为起点的，是与雅典、罗马、开罗齐名的世界著名历史古都。1981年联合国科教文组织把西安确定为“世界历史名城”。
+            </p>
+            <p>西安文化遗产极为丰富。西安境内有重点文物保护单位282处，其中国家级重点文物保护单位34处，省级重点文物保护单位72处，馆库藏文物12万余件。被誉为“世界第八奇迹”的秦始皇兵马俑坑，目前世界上保存最完整、规模最大的古城墙--西安明城墙及周沣镐、秦阿房宫、汉长安城、唐大明宫四大遗址等，皆为人类珍贵的历史文化遗产。丰富的历史文化遗产和独特的自然风貌使西安成为海内外游客首选的旅游目的地之一。
+            </p>
+        </div>
+    </div>
+    <!-- 西安历史底蕴 end-->
+    <div class="ge" id="西安名小吃"></div>
+    <!-- 西安名小吃 start -->
+    <div class="w chi">
+        <div class="logo3">
+            <h1>
+                <a href="indes.html" title="西安印象">西安名小吃</a>
+            </h1>
+        </div>
+        <div class="mar3">
+            <a>西安名小吃</a>
+        </div><br><br><br><br>
+        <div class="xiaochi">
+            <ul>
+                <li>
+                    <h3>1.biangbiang面:</h3>
+                    陕西关中地区的汉族传统面食Biangbiang面。biáng也是一种口语化的象声词，有时为口头禅，或童语。此字出于陕西关中的一种小吃“Biangbiang面”（陕西关中民间传统风味面食，特指关中麦子磨成的面粉，通常手工擀成长又宽又厚的面条），因为在做这种面时会发出biángbiáng的声音，biángbiáng面因此得名。它有三指宽，一米长，因此被列为陕西八大怪之一，也被称为裤带面。各位食量小的集美们，面的分量很足，温馨提醒。
+                    Biang字口诀：一点撩上天，黄河两道湾，八字大张口，言字往里走，你一扭，我一扭；你一长，我一长；当中夹个马大王，心字底月字旁，留个勾搭挂麻糖，推个车车逛咸阳。
+                </li>
+                <img src="../吃11.png" width="900">
+                <span><img src="../吃12.png" width="450"></span><span><img src="../吃13.png" width="450"
+                        height="340"></span>
+                <li>
+                    <h3>2.肉夹馍:</h3>
+                    肉夹馍是古汉语“肉夹于馍”的简称，中国陕西省传统特色食物之一。2016年1月，肉夹馍入选陕西省第5批非物质文化遗产名录。陕西地区有使用白吉馍的“腊汁肉夹馍”、宝鸡西府的肉臊子夹馍(肉臊子中放食醋)、潼关的潼关肉夹馍（与白吉馍不同，其馍外观焦黄，条纹清晰，内部呈层状，饼体发胀，皮酥里嫩，火功到家，食用时温度以烫手为佳，且老潼关肉夹馍是热馍夹凉肉，饼酥肉香，爽而不腻）。肉夹馍是陕西著名小吃。
+                </li>
+                <img src="../吃21.png" width="900">
+                <img src="../吃22.png" width="900">
+                <li>
+                    <h3>3.羊肉泡馍:</h3>
+                    羊肉泡馍，亦称羊肉泡，古称“羊羹”，关中汉族风味美馔，源自陕西省渭南市固市镇。它烹制精细，料重味醇，肉烂汤浓，肥而不腻，营养丰富，香气四溢，诱人食欲，食后回味无穷。北宋著名诗人苏轼留有“陇馔有熊腊，秦烹唯羊羹”的诗句。因它暖胃耐饥，素为陕西人民所喜爱，外宾来陕也争先品尝，以饱口福。羊肉泡馍已成为陕西名吃的“总代表”。经过这么多年的沉淀，一碗鲜美的羊肉泡馍，能满足你饥肠辘辘的胃（推荐亲手掰馍，感受当地文化）
+                </li>
+                <img src="../吃31.png" width="900">
+                <img src="../吃32.png" width="900">
+                <li>
+                    <h3>4.凉皮:</h3>
+                    凉皮，起源于陕西关中地区的汉族传统美食，是擀面皮、面皮、米皮、酿皮的统称。流行于中国北方地区。是不可多得的天然绿色无公害食品。因原料、制作方法、地域不同，有热米（面）皮、擀面皮、烙面皮、酿皮等。口味有麻辣，酸甜，香辣等各种口味。凉皮历史悠久，据说源于秦始皇时期，距今已有两千多年历史。冬天吃面皮你能保暖，夏天吃你能消暑，春天吃你能解乏，秋天吃你能去湿，凉皮真可谓是四季皆宜、不可多得的天然绿色无公害食品。《本草纲目》上说：米能养脾，麦能补心。
+                </li>
+                <img src="../吃41.png" width="900">
+                <img src="../吃42.png" width="900">
+                <li>
+                    <h3>5.乾县锅盔:</h3>
+                    乾县锅盔，是陕西八大怪之一。锅盔，又叫锅魁、锅盔馍、干馍，是陕西关中地区城乡居民喜食的传统风味面食小吃。乾县锅盔是直径八寸、厚约六分的圆饼，呈菊花状，表皮酥黄微鼓，刚出锅的锅盔面香扑鼻。乾县锅盔由于做工独特，所以久放不坏。锅盔制作工艺精细，素以“干、酥、白、香”著称。干硬耐嚼，内酥外脆，白而泛光，香醇味美。
+                </li>
+                <img src="../吃51.png" width="900">
+                <img src="../吃52.png" width="900">
+                <li>
+                    <h3>6.肉丸胡辣汤:</h3>
+                    肉丸糊辣汤，是西安本地名吃，它不同于河南的糊辣汤，其制作原料主要有牛肉、土豆、莲花白等。肉丸胡辣汤源自西安，简单的可以说是蔬菜牛肉丸子汤，或者说是牛肉丸烩菜，但是区别于外地的是汤要勾芡。汤里有浑圆的牛肉丸子，切成块状
+                    的土豆、莲花白、胡萝卜、菜花、芹菜等。先用牛羊骨熬汤，下牛肉丸，烩菜，最后勾芡而成。说起容易，但是要做到菜不煮烂，适合可口可是有功夫的。吃前浇一勺店家精心熬制的红艳艳的辣椒油，吃罢舌尖发麻（花椒惹得祸），微微冒汗，浑身舒坦。
+                    肉丸糊辣汤另有一个雅致的名字叫八珍汤，叫八珍自然夸张，不过这也说明糊辣汤“内容”很多。最受西安人欢迎的早餐之一。
+                </li>
+                <img src="../吃61.png" width="900">
+                <img src="../吃62.png" width="900">
+        </div>
+    </div>
+    <!-- 西安名小吃 end -->
+    <!-- 旅游线路推荐 start -->
+    <div class="ge" id="旅游线路推荐"></div>
+    <div class="w lu">
+        <div class="logo4">
+            <h1>
+                <a href="indes.html" title="西安印象">旅游线路推荐</a>
+            </h1>
+        </div>
+        <div class="mar4">
+            <a>旅游线路推荐</a>
+        </div><br><br><br><br><br>
+        <ol>
+            <li>
+                <a href="../线路1/陕西历史博物馆/陕西历史博物馆页面.html" target="_blank">陕西历史博物馆</a>&gt;<a
+                    href="../线路1/西安碑林博物馆/西安碑林博物馆相关页面.html" target="_blank">西安碑林博物馆</a>&gt;<a
+                    href="../线路1/西安关中民俗艺术博物馆/西安关中民俗艺术博物馆相关页面.html" target="_blank">西安关中民俗艺术博物馆</a>&gt;<a
+                    href="../线路1/西安博物馆/西安博物馆相关页面.html" target="_blank">西安博物馆</a>
+            </li>
+            <li>
+                <a href="../线路2/西安钟鼓楼/西安钟鼓楼介绍页面.html" target="_blank">西安钟鼓楼</a>&gt;<a href="../线路2/大雁塔/大雁塔介绍页面.html"
+                    target="_blank">大雁塔</a>&gt;<a href="../线路2/小雁塔/小雁塔相关介绍.html" target="_blank">小雁塔</a>&gt;<a
+                    href="../线路2/秦始皇兵马俑博物馆/兵马俑博物馆介绍页面.html" target="_blank">秦始皇兵马俑博物馆</a>
+            </li>
+            <li>
+                <a href="../线路3/大唐芙蓉园/大唐芙蓉园介绍页面.html" target="_blank">大唐芙蓉园</a>&gt;<a href="../线路3/西安植物园/西安植物园.html"
+                    target="_blank">西安植物园</a>&gt;<a href="../线路3/西安秦岭野生动物园/西安秦岭野生动物园.html"
+                    target="_blank">西安秦岭野生动物园</a>&gt;<a href="../线路3/西安世博园/西安世博园.html" target="_blank">西安世博园</a>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 旅游线路推荐 end -->
+    <!-- 底部模块的制作  start-->
+    <footer class="footer">
+        <div class="w">
+            <div class="help">
+                <dl>
+                    <dd><a href="#">自由行</a></dd>
+                    <dd><a href="#">自驾游</a></dd>
+                    <dd><a href="#">门票</a></dd>
+                    <dd><a href="#">公司旅游</a></dd>
+                    <dd><a href="#">当地活动</a></dd>
+                    <dd><a href="#">旅拍</a></dd>
+                </dl>
+                <dl>
+                    <dd><a href="#">攻略</a></dd>
+                    <dd><a href="#">游记</a></dd>
+                    <dd><a href="#">达人玩法</a></dd>
+                </dl>
+                <dl>
+                    <dd><a href="#">帮助中心</a></dd>
+                    <dd><a href="#">火车时刻表</a></dd>
+                    <dd><a href="#">地铁路线图</a></dd>
+                    <dd><a href="#">航班查询</a></dd>
+                </dl>
+            </div>
+            <div class="coperight">
+                <div class="links">
+                    <a href="#"> 关于我们</a> | <a href="#">联系我们</a> | <a href="#">联系客服</a> | <a href="#">友情链接 </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 底部模块的制作  end-->
+    <!-- 回到顶部箭头 start-->
+    <div id="gs_feedback_gotop">
+        <div class="side_fixed">
+            <a class="to_top" title="回到顶端" href="#head" id="gotop2" style="visibility: visible; 
+            display:none">&nbsp;</a>
+        </div>
+    </div>
+    <!-- 回到顶部箭头 end-->
+    <script>
+        var to_top = document.querySelector('.to_top');
+        var ge = document.querySelector('.ge');
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset >= ge.offsetTop) {
+                to_top.style.display = 'block';
+            } else
+                to_top.style.display = 'none';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .tupian {
+            position: relative;
+            width: 850px;
+            height: 455px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        .tupian img {
+            width: 850px;
+            height: 455px;
+        }
+        /* 并集选择器可以一起声明相同的样式 */
+        .prev,
+        .next {
+            /* 如果一个盒子既有left属性也有right属性，则默认会执行乐翻天属性，同理top bottom会执行top */
+            position: absolute;
+             /* 绝对定位的盒子垂直居中 */
+             top: 50%;
+            margin-top: -30px;
+            /* 加了绝对定位的盒子可以直接设置宽度和高度 */
+            width: 40px;
+            height: 60px;
+            background-color: rgba(0,0,0,.3);
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .prev {
+            left: 0;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .next {
+            right: 0;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        .promo-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -70px;
+            background:rgba(255,255,255,.3);
+            width: 140px;
+            height: 26px;
+            border-radius: 13px;
+        }
+        .promo-nav li {
+            float: left;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 6px;
+        }
+        /* 不要忘记选择器权重的问题 */
+        .promo-nav .selected {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="tupian">
+        <img src="images/大唐芙蓉园.jpg" >
+        <!-- 左侧按钮箭头 -->
+        <a href="#" class="prev">&lt;</a>
+        <!-- 右侧按钮箭头 -->
+        <a href="#" class="next">&gt;</a>
+        <!-- 小圆点 -->
+        <ul class="promo-nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

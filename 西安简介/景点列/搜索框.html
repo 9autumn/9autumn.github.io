@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="./vue.js"></script>
+	</head>
+	<body>
+		<!-- 准备好一个容器-->
+		<div id="root">
+			<h2>景点列表</h2>
+			<input type="text" placeholder="详情请搜索跳转" v-model="keyWord">
+			<ul>
+				<li v-for="(p,index) of filPerons" :key="index">
+					<a href="../ceshi/ceshi2.html" target="_blank">{{p.name}}</a>
+					<!-- <router-link :to='../../XIANWEB/首页/线路1/西安关中民俗艺术博物馆/线路推荐页面.html'>{{p.name}}</router-link> -->
+				</li>
+			</ul>
+		</div>
+	
+
+		<script type="text/javascript">
+			Vue.config.productionTip = false
+			
+			//用watch实现
+			//#region 
+			 new Vue({
+				el:'#root',
+				data:{
+					keyWord:'',
+					persons:[
+						{id:'001',name:'陕西历史博物馆'},
+						{id:'002',name:'西安碑林博物馆'},
+						{id:'003',name:'西安关中民俗艺术博物馆'},
+						{id:'004',name:'西安博物馆'},
+						{id:'005',name:'西安钟鼓楼'},
+						{id:'006',name:'大雁塔'},
+						{id:'007',name:'小雁塔'},
+						{id:'008',name:'秦始皇兵马俑博物馆'},
+						{id:'009',name:'大唐芙蓉园'},
+						{id:'010',name:'西安植物园'},
+						{id:'011',name:'西安秦岭野生动物园'},
+						{id:'012',name:'西安世博园'}
+					],
+					filPerons:[]
+				},
+				watch:{
+					keyWord:{
+						// immediate:true,
+						handler(val){
+							this.filPerons = this.persons.filter((p)=>{
+								return p.name.indexOf(val) !== -1
+							})
+						}
+					}
+				}
+			}) 
+			//#endregion
+			
+			//用computed实现
+			// new Vue({
+			// 	el:'#root',
+			// 	data:{
+			// 		keyWord:'',
+			// 		persons:[
+			// 			{id:'001',name:'陕西历史博物馆'},
+			// 			{id:'002',name:'西安碑林博物馆'},
+			// 			{id:'003',name:'西安关中民俗艺术博物馆'},
+			// 			{id:'004',name:'西安博物馆'},
+			// 			{id:'005',name:'西安钟鼓楼'},
+			// 			{id:'006',name:'大雁塔'},
+			// 			{id:'007',name:'小雁塔'},
+			// 			{id:'008',name:'秦始皇兵马俑博物馆'},
+			// 			{id:'009',name:'大唐芙蓉园'},
+			// 			{id:'010',name:'西安植物园'},
+			// 			{id:'011',name:'西安秦岭野生动物园'},
+			// 			{id:'012',name:'西安世博园'}
+			// 		]
+			// 	},
+			// 	computed:{
+			// 		filPerons(){
+			// 			return this.persons.filter((p)=>{
+			// 				return p.name.indexOf(this.keyWord) !== -1
+			// 			})
+			// 		}
+			// 	}
+			// }) 
+
+		</script>
+</html>

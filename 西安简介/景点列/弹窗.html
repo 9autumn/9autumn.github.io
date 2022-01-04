@@ -1,0 +1,104 @@
+<html>
+<head lang="en">
+    <link rel="shortcut icon" href="../首页/upload/favicon .ico">
+    <title>弹窗</title>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            /* .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color: #c8c8c8;
+                z-index: 1001;
+                -moz-opacity: 0.8;
+                opacity: .80;
+                filter: alpha(opacity=78);
+            } */
+
+            .pop_win {
+                display: none;
+                position: absolute;
+                top: 5%;
+                /* top: 20%; */
+                left: 23%;
+                /* left: 30%; */
+                width: 55%;
+                /* width: 30%; */
+                height: 87%;
+                /* height: 45%; */
+                padding: 10px;
+                border: 2px solid rebeccapurple;
+                background-color: white;
+                z-index: 9999;
+                overflow: auto;
+                border-radius: 15px;
+                background: url(./防控疫情图.jpg);
+                background-size:cover;
+            }
+
+            .a1 {
+                text-decoration: none;
+                color: red;
+            }
+
+            .a2 {
+                text-decoration: none;
+                color: red;
+            }
+
+            p {
+                font-weight: 1000;
+                font-size: large;
+                color: rgb(10, 169, 197);
+            }
+
+
+            h4{
+                color: royalblue;
+            }
+
+        </style>
+        <script type="text/javascript">
+            function popWin() {
+                document.getElementById('light').style.display = 'block';
+                document.getElementById('123').style.display = 'none';
+            }
+
+            function closeWin() {
+                document.getElementById('light').style.display = 'none';
+
+            }
+        </script>
+    </head>
+
+<body>
+    <!-- <p class="fir">疫情警示框</p> -->
+    <a class="a1" href="#"  onclick="popWin();">疫情警示框</a>
+
+    <div id="light" class="pop_win">
+        <a class="a2" href="#" onclick="closeWin();" style="float: right;">[x]</a>
+        <h2>西安市疫情防控要求:</h2>
+        <div>
+            <h3>一、</h3>
+            <p class="tanchuang">请市民密切关注疫情发展动态，非必要不离市。</p>
+            <h3>二、</h3>
+            <p class="tanchuang">近14天内，与国内本土病例行程轨迹有交集的人员、从以下这些疫情相关地区来（返）西安的人员（含旅游、开会等人员）、与国内本土病例乘坐过相同航班、高铁、火车的人员，请主动向社区、单位、酒店报备，配合做好核酸检测、医学观察、健康监测等疫情防控措施。
+            </p>
+            <h3>三、</h3>
+            <p class="tanchuang">相关社区、单位、酒店要履行疫情防控主体责任，及时做好人员排查、登记、报告，及时进行疫情提醒，积极提供服务。</p>
+            <h3>四、</h3>
+            <p class="tanchuang">继续保持规范佩戴口罩、勤洗手、常通风、保持1米线等良好卫生习惯，主动做好测温、扫码等常态化措施，出现相关症状及时就诊。符合条件但仍未接种的市民尽快完成接种，保护自己，保护家人。</p>
+            <h3>五、</h3>
+            <p class="tanchuang">如有疑问可拨打西安市各区（县）、开发区疫情防控指挥部群众咨询热线。</p>
+            <h4>咨询热线请关注微信公众号：西安疫情咨询热线。</h4>
+        </div>
+    </div>
+    <!-- <div id="fade" class="black_overlay">  ceshiceshi</div> -->
+    <!-- <div id="123">woshiyiiegchiwdhiwqdjqwdqw</div> -->
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+    
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.style-red {
+    color: #c81623;
+}
+/* 快捷导航模块 */
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+.shortcut ul li {
+    float: left;
+}
+/* 设置分割行 */
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+/* header 头部制作 */
+.header {
+    position: relative;
+    height: 115px;
+    background-color: #fff;
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    width: 68px;
+    height: 100px;
+    background-color: #fff;
+}
+.logo a {
+    display: block;
+    width: 68px;
+    height: 100px;
+    background: url(../../图片1.png) no-repeat;
+    font-size: 0;
+}
+.mar {
+    position: absolute;
+    top: 75px;
+    left: 70px;
+    font-size: 30px;
+    font-weight: 30px;
+    color: rgb(100, 16, 16);
+}
+.nav {
+    height: 54px;
+    border-bottom: 2px solid rgb(194, 75, 75);
+}
+.nav .dropdown {
+    float: left;
+    width: 210px;
+    height: 53px;
+    background-color: rgb(194, 75, 75);
+}
+.nav .navitems {
+    float: left;
+}
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 53px;
+    font-size: 18px;
+}
+.dropdown .dd {
+    display: none;
+    width: 210px;
+    height: 300px;
+    background-color:  rgb(212, 85, 85);
+    margin-top: 1px;
+}
+.dropdown .dd ul li {
+    height: 50px;
+    line-height: 50px;
+    margin-left: 3px;
+    padding-left: 10px;
+}
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+.dropdown .dd ul li a {
+    font-size: 16px;
+    color: #fff;
+}
+.dropdown .dd ul li:hover a {
+    color:  rgb(212, 85, 85);
+}
+.navitems ul  li {
+    float: left;
+}
+.navitems ul  li a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    padding: 0 70px;
+}
+/* 底部模块制作 */
+.footer {
+    height: 225px;
+    background-color: #f5f5f5;
+}
+.help {
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 25px;
+    padding-left: 250px;
+}
+.help dl {
+    float: left;
+    width: 250px;
+}
+.coperight {
+    text-align: center;
+    padding-top: 8px;
+
+}
