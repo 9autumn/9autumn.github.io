@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(151, 54, 54);
+    color: white;
+}
+
+.manys{
+    float: left;
+    width: 200px;
+    margin-left: 600px;
+    margin-top: 150px;
+    /* display: inline-block; */
+}
+
+.image1{
+    margin-top: 100px;
+    margin-left: 500px;
+    width: 800px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+li
+{
+    list-style-type: none ;
+}
