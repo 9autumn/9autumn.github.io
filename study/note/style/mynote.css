@@ -1,0 +1,436 @@
+﻿@charset "utf-8";
+*{
+	outline: 0;  /*清楚掉浏览器默认的focu边框样式*/
+	-webkit-transition:background .3s,opacity .2s,box-shadow .4s;
+	-moz-transition:background .3s,opacity .2s,box-shadow .4s;
+	-o-transition:background .3s,opacity .2s,box-shadow .4s;
+	-ms-transition:background .3s,opacity .2s,box-shadow .4s;
+	transition:background .3s,opacity .2s,box-shadow .4s;
+	-webit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	list-style: none;
+	word-wrap: break-word;
+	font-family: "黑体";
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+}
+body{
+	min-height: 600px;
+	background: url(../img/bg.jpg) no-repeat #a59b9b;
+}
+.note-area{
+	margin: 0 auto;
+	width: 900px;
+}
+.note-area img{
+	width: 80px;
+	height: 80px;
+}
+.add-note{
+	display: none;
+	position: fixed;
+	top: 30px;
+	left: 100px;
+	z-index: 999;
+	width: 800px;
+	padding: 50px;
+	height: 600px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px 1px #616264;
+
+}
+.add-move{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	cursor: move;
+}
+.u-avatar{
+	position: absolute;
+	padding: 15px;
+	top: 50px;
+	right: 25px;
+	text-align: center;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.u-avatar span{
+	display: block;
+}
+.u-avatar img{
+	width: 120px;
+	height: 120px;
+}
+textarea,
+input,
+button{
+	border-radius: 5px;
+	border: 0;
+}
+
+textarea,
+input
+{
+	background: #F0F0F0;
+}
+.add-note textarea,
+.add-note input{
+	/*box-shadow: 1px 2px 2px 2px #FEA8B0;*/
+	width: 80%;
+	font-size: 1.2em;
+}
+.add-note input{
+	height: 40px;
+}
+.add-note textarea{
+	margin-top: 25px;
+	height: 400px;
+	
+}
+
+input:focus,
+input:hover,
+textarea:focus,
+textarea:hover{
+	background: #fff;
+	box-shadow:1px 1px 5px 3px #FEA8B0;
+}
+
+button.primary,
+button[type=submit]{
+	padding: 10px 46px;
+	font-weight: bold;
+	background: #FE99AF;
+	cursor: pointer;
+}
+button[type=submit]{
+	position: absolute;
+	bottom: 85px;
+	right: 20px;
+	font-size: 25px;
+}
+button.primary:hover,
+button[type=submit]:hover{
+	color: #fff;
+	background: #FB6073;
+}
+
+
+/*笔记部分*/
+
+.note-list{
+	margin-top: 20px;
+}
+
+.note-item{
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 20px;
+	background: rgba(254,249,249,.8);
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+	overflow: hidden;
+	cursor: pointer;
+}
+.note-item:hover{
+	background: rgba(254,249,249,1);
+	box-shadow: 3px 3px 3px 3px #A19595;
+}
+
+.avatar{
+	margin-right: 40px;
+	overflow: hidden;
+	width: 80px;
+	text-align: center;
+	border-radius: 5px;
+}
+.note-item>div{
+	display: inline-block;
+}
+.note-content{
+	width: 650px;
+	font-size: 32px;
+	vertical-align: top;
+}
+
+.note-content span{
+	display: block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.content-preview{
+	margin-top: 21px;
+	height: 56px;
+	font-size: .5em;
+	color: #C0A9FE;
+	max-height: 60px;
+}
+.time{
+	position: absolute;
+	bottom: 6px;
+	right: 10px;
+	font-size: 1em;
+	color: #B4B4B4;
+}
+
+/*编辑删除按钮*/
+.note-edit{
+	position: absolute;
+	top: 11px;
+	right: 40px;
+}
+.note-delete{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	
+}
+.star{
+	position: absolute;
+	top: 5px;
+	right: 68px;
+	cursor: pointer;
+}
+.star img{
+	width: 33px;
+	height: 33px;
+	opacity: .6;
+}
+.note-edit img,
+.note-delete img{
+	width: 24px;
+	height: 24px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+.note-detail .note-edit img
+{
+	width: 24px;
+	height: 25px;
+}
+.note-edit img{
+	width: 22px;
+	height: 22px;
+}
+.star:hover img,
+.note-edit img:hover,
+.note-delete img:hover{
+	opacity: 1;
+}
+
+.mask{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.3);
+}
+
+.ball{
+	position: fixed;
+	top: 100px;
+	right: 60px;
+	overflow: hidden;
+	background: #FF4966;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+#star{
+	top: 180px;
+	background: #f6ea06;
+}
+.ball img{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.ball span{
+	display: block;
+	margin-left: 60px;
+	font-size: 25px;
+	color: #fff;
+	cursor: pointer;
+	line-height: 60px;
+}
+
+/*文章详情页*/
+.note-detail{
+	display: none;
+	position: fixed;
+	width: 800px;
+	padding: 20px;
+	margin: 0 auto;
+	background: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px 4px #6A6565;
+	z-index: 998;
+}
+.note-detail input,
+.note-detail textarea,
+.note-detail button{
+	display: none;
+}
+.note-detail textarea{
+	font-size: 1.3em;
+	width: 95%;
+	height: 450px;
+}
+
+.note-detail button
+{
+	bottom: 3px;
+	right: 60px;
+	background: #F0B8C8;
+	font-size: 16px;
+	line-height: 16px;
+	height: 35px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+}
+.note-detail>form>div{
+	margin-bottom: 20px;
+}
+
+.detail-title{
+	/*display: none;*/
+	font-size: 2em;
+	cursor: move;
+}
+.title-edit input{
+	font-size: 2em;
+	width: 80%;
+	height: 37px;
+}
+.detail-time{
+	color: #8E96C1;
+	font-size: 1.1em;
+}
+.detail-content{
+	font-size: 1.3em;
+}
+.detail-content{
+	/*display: none;*/
+	position: relative;
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+}
+.detail-content .inner-content
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 95%;
+}
+.detail-content .scroll,
+.scroll .inner-scroll{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 22px;
+	border-radius: 11px;
+	opacity: .5;
+}
+.detail-content .scroll:hover,
+.scroll .inner-scroll:hover{
+	opacity: 1;
+}
+.detail-content .scroll{
+	background: rgb(186, 197, 197);
+	height: 450px;
+}
+
+.scroll .inner-scroll{
+	height: 50px;
+	background: #212020;
+	cursor: pointer;
+}
+
+/* 详情页右键菜单 */
+.level2,
+.level1{
+	display: none;
+	position: absolute;
+	top: 100px;
+	left: 200px;
+	text-align: center;
+	background: #F5F1F8;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px 2px #CBBBBB;
+	z-index: 999;
+}
+.level1{
+	width: 150px;
+	height: 180px;
+	font-size: 20px;
+	line-height: 60px;
+}
+.level1 li{
+	border-radius: 3px;
+}
+.level1 li:hover{
+	background: #F79999;
+	cursor: pointer;
+}
+.level2{
+	display: none;
+	top: 0;
+	left: 150px;
+	width: 100px;
+	height: 120px;
+	line-height: 30px;
+	font-size: 18px;
+}
+.level2 input{
+	width: 90%;
+	background: #fff;
+}
+#fontcolor{
+	top: 60px;
+}
+#bgcolor{
+	top: 120px;
+}
+
+
+.tab-page{
+	position: absolute;
+	top: 10px;
+	left: 500px;
+	overflow: hidden;
+}
+.tab-page li{
+	float: left;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	background: #6155A7;
+	text-align: center;
+	border-radius: 15px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.tab-page li.active,
+.tab-page li:hover{
+	background: #D89393;
+}

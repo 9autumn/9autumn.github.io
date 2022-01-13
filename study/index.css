@@ -6,14 +6,14 @@ body{
 .manys{
     float: left;
     width: 200px;
-    margin-left: 600px;
+    margin-left: 300px;
     margin-top: 150px;
     /* display: inline-block; */
 }
 
 .image1{
     margin-top: 100px;
-    margin-left: 500px;
+    margin-left: 300px;
     width: 800px;
 }
 a {
@@ -30,4 +30,15 @@ a:hover
 li
 {
     list-style-type: none ;
+}
+#time{
+    color: violet;
+    float: left;
+    margin-top: 250px;
+    margin-left: 200px;
+    font-size:x-large;
+}
+#head1{
+    color: rgb(208, 221, 25);
+    font-weight: bolder;
 }
